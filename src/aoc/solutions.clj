@@ -27,7 +27,7 @@
 ;; DAY 1
 
 (def lines
-  (with-open [reader (io/reader "/tmp/input.txt")]
+  (with-open [reader (-> "day-1.txt" io/resource io/reader)]
     (doall (map parse-long (line-seq reader)))))
 
 ;; Part 1
@@ -53,7 +53,7 @@
 ;; DAY 2
 
 (def input
-  (with-open [reader (io/reader "/tmp/input.txt")]
+  (with-open [reader (-> "day-2.txt" io/resource io/reader)]
     (into []
       (comp
         (map #(.split % " "))
